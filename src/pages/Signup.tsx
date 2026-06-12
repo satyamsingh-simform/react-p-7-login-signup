@@ -21,7 +21,7 @@ export default function Signup() {
   }
 
   return(
-    <>
+    <div className="min-h-screen flex flex-col gap-5 justify-center items-center p-10 border-2 border-red-500">
     <h1 className="text-2xl">SignUp</h1>
     <form onSubmit={handleSubmit(submit)}>
         <div className="p-5 w-150 flex flex-col gap-5 border rounded-2xl shadow-2xl">
@@ -125,10 +125,10 @@ export default function Signup() {
             <Button className="p-5">submit</Button>
             <div className="flex justify-end gap-5 px-10 ">
                 <span className="decoration-solid">already have an account</span>
-                <a href="">login</a>
+                <a href="/login">login</a>
             </div>
         </div>
     </form>
-    </>
+    </div>
   );
 }

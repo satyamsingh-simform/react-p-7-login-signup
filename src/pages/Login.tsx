@@ -18,7 +18,7 @@ export default function Login(){
         getUser();
     }
     return(
-        <>
+        <div className="min-h-screen flex flex-col gap-5 justify-center items-center p-10 border-2 border-red-500">
         <form onSubmit={handleSubmit(submit)}>
             <h1 className="text-2xl text-center pb-5">Login</h1>
             <div className="px-10 py-15 w-100 flex flex-col gap-5 border rounded-2xl shadow-2xl">
@@ -38,10 +38,10 @@ export default function Login(){
             />
             <Button className="p-5">Login</Button>
              <div className="flex justify-end gap-5 px-10 ">
-                <a href="">signup</a>
+                <a href="/">signup</a>
             </div>
             </div>
         </form>
-        </>
+        </div>
     )
 }
