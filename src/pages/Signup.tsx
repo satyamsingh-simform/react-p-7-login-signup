@@ -6,18 +6,20 @@ import { GENDER_OPTIONS } from "@/utils/constants";
 import { saveUser } from "@/utils/localStorage";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router";
 import type z from "zod";
 
 type SignupFormData=z.infer<typeof signupSchema>
 
 export default function Signup() {
-  const { register, handleSubmit, control, formState: { errors },} = useForm<SignupFormData>({
+  const { register, handleSubmit, reset, control, formState: { errors },} = useForm<SignupFormData>({
     resolver: zodResolver(signupSchema),
   });
 
   function submit(data:SignupFormData){
     console.log(data);
     saveUser(data);
+    reset();
   }
 
   return(
@@ -125,7 +127,7 @@ export default function Signup() {
             <Button className="p-5">submit</Button>
             <div className="flex justify-end gap-5 px-10 ">
                 <span className="decoration-solid">already have an account</span>
-                <a href="/login">login</a>
+                <Link className="text-blue-600 hover:underline" to='/login'>Login</Link>
             </div>
         </div>
     </form>
