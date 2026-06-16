@@ -19,7 +19,7 @@ export function saveUser(newUser:User){
     ))
     if(duplicate){
         alert('email already register');
-        return;
+        throw new Error('email already register')
     }
     users.push(newUser)
     localStorage.setItem('USER',JSON.stringify(users));

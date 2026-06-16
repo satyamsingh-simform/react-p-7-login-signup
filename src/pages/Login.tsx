@@ -26,7 +26,7 @@ export default function Login(){
             user.email===data.email && user.password===data.password
         ))
         if(!userFound){
-            alert('user does not exist');
+            alert('invalid credential');
             return;
         }
         console.log('matched-->',userFound);

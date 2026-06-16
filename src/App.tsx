@@ -6,13 +6,15 @@ import { useAuth } from "./hook/useAuth";
 
 export default function App() {
   const {isAuthenticated}=useAuth();
+  console.log("is--->",isAuthenticated);
+  
   return(
     <>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Signup/>}></Route>
         <Route path="/signup" element={<Signup/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/login" element={isAuthenticated?<Navigate to='/profile'/>:<Login/>}></Route>
         <Route path="/profile" element={isAuthenticated?<Profile/>:<Navigate to='/login'/>}></Route>
       </Routes>
     </BrowserRouter>
