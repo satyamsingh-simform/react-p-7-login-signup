@@ -19,7 +19,7 @@ export const Profile = () => {
             <div className="p-10 w-200 shadow-md bg-radial from-pink-400 from-40% to-fuchsia-700">
                 {
                     userArr.map((obj)=>(
-                        <p key={obj?.email} className="flex flex-col gap-5 ">
+                        <div key={obj?.email} className="flex flex-col gap-5 ">
                             <h1 className="text-center mb-5">PERSONAL INFO</h1>
                             <div className="flex justify-between">
                                 <span className="border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">Name:{obj?.name}</span>
@@ -35,7 +35,7 @@ export const Profile = () => {
                             </div>
                             <span className="text-center border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">email:{obj?.email}</span>
                             <span className="text-center border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">Address:{obj?.address}</span>
-                        </p>
+                        </div>
                     ))
                 }
             </div>

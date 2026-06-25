@@ -21,7 +21,6 @@ export function AuthProvider({children,}: AuthProviderProps) {
 
   useEffect(()=>{
     const currentUser=localStorage.getItem('CURRENT_USER');
-    console.log('curent-->',currentUser);
     
     if(currentUser){
       const parsedCurrentUser=JSON.parse(currentUser);

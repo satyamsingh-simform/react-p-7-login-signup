@@ -3,8 +3,6 @@ import { Navigate, Outlet } from "react-router";
 
 export const ProtectedRoute = () => {
     const {isAuthenticated}=useAuth();
-    console.log(isAuthenticated);
-    
 
   return (
     <>

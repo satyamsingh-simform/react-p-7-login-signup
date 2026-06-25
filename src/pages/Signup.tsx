@@ -19,9 +19,7 @@ export default function Signup() {
   const navigate=useNavigate()
 
   function submit(data:SignupFormData){
-    console.log(data);
     saveUser(data);
-    console.log('still running')
     navigate('/login')
     reset();
   }
