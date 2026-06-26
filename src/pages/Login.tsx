@@ -20,16 +20,14 @@ export default function Login(){
     })
 
     function submit(data:LoginFormData){
-        console.log(data);
         const users=getUser();
         const userFound=users.find((user)=>(
             user.email===data.email && user.password===data.password
         ))
         if(!userFound){
-            alert('user does not exist');
+            alert('invalid credential');
             return;
         }
-        console.log('matched-->',userFound);
         login(userFound)
         navigate('/profile');
     }

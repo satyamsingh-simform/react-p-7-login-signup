@@ -16,15 +16,26 @@ export const Profile = () => {
             </button>
         </header>
         <main className="flex justify-center items-center m-5">
-            <div className="p-10 shadow-md">
+            <div className="p-10 w-200 shadow-md bg-radial from-pink-400 from-40% to-fuchsia-700">
                 {
                     userArr.map((obj)=>(
-                        <p key={obj?.email} className="flex flex-col">
-                            <span>Name:{obj?.name} {obj?.lastName}</span>
-                            <span>Age:{obj?.age}</span>
-                            <span>City:{obj?.city}</span>
-                            <span>Address:{obj?.address}</span>
-                        </p>
+                        <div key={obj?.email} className="flex flex-col gap-5 ">
+                            <h1 className="text-center mb-5">PERSONAL INFO</h1>
+                            <div className="flex justify-between">
+                                <span className="border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">Name:{obj?.name}</span>
+                                <span className="border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">lastName:{obj?.lastName}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <span className="border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">Gender:{obj?.gender}</span>
+                                <span className="border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">Age:{obj?.age}</span>
+                            </div>
+                            <div className="flex justify-between">
+                                <span className="border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">State:{obj?.state}</span>
+                                <span className="border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">City:{obj?.city}</span>
+                            </div>
+                            <span className="text-center border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">email:{obj?.email}</span>
+                            <span className="text-center border p-5 rounded-lg bg-linear-to-bl from-violet-100 to-fuchsia-100 text-gray-700">Address:{obj?.address}</span>
+                        </div>
                     ))
                 }
             </div>

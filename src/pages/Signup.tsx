@@ -6,7 +6,7 @@ import { GENDER_OPTIONS } from "@/utils/constants";
 import { saveUser } from "@/utils/localStorage";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import type z from "zod";
 
 type SignupFormData=z.infer<typeof signupSchema>
@@ -16,9 +16,11 @@ export default function Signup() {
     resolver: zodResolver(signupSchema),
   });
 
+  const navigate=useNavigate()
+
   function submit(data:SignupFormData){
-    console.log(data);
     saveUser(data);
+    navigate('/login')
     reset();
   }
 
