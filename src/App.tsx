@@ -13,6 +13,7 @@ export default function App() {
       <Routes>
         <Route element={<PublicRoute/>}>
           <Route path="/" element={<Signup/>}></Route>
+          <Route path="/signup" element={<Signup/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
         </Route>
         <Route element={<ProtectedRoute/>}>
